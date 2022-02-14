@@ -12,7 +12,11 @@ let pokemonlist = [
 
     {
 
-        
+        name: 'Krookodile',
+
+        type: ['ground', 'dark'],
+
+        hight: 4\'11\",
 
     }
 
