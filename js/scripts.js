@@ -1,5 +1,21 @@
-alert('Helloworld');
+let pokemonlist = [
+    
+    {
 
-let favoriteFood = 'in-n-out burger';
+         name: 'Charmander',
 
-document.write(favoriteFood);
+         type: ['fire']
+         
+         hight: 2.00,
+   
+    },
+
+    {
+
+        
+
+    }
+
+
+
+}]
