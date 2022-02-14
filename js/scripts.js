@@ -18,8 +18,14 @@ let pokemonlist = [
 
         hight: 4\'11\",
 
+    },
+
+    {
+        name: 'Alcremie',
+
+        type: ['fairy'],
+
+        hight: 1,
     }
 
-
-
-}]
+]
