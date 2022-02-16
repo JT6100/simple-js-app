@@ -4,7 +4,7 @@ let pokemonlist = [
 
          name: 'Charmander',
 
-         type: ['fire']
+         type: ['fire'],
          
          hight: 2.00,
    
