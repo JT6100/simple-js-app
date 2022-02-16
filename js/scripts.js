@@ -6,7 +6,7 @@ let pokemonlist = [
 
          type: ['fire'],
          
-         hight: 2.00,
+         height: 2.00,
    
     },
 
@@ -16,7 +16,7 @@ let pokemonlist = [
 
         type: ['ground', 'dark'],
 
-        hight: 4\'11\",
+        height: 4\'11\",
 
     },
 
