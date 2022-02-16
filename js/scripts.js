@@ -16,7 +16,7 @@ let pokemonlist = [
 
         type: ['ground', 'dark'],
 
-        height: 4\'11\",
+        height: 4.92,
 
     },
 
