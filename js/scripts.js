@@ -25,7 +25,7 @@ let pokemonlist = [
 
         type: ['fairy'],
 
-        hight: 1,
+        height: 1,
     }
 
 ];
