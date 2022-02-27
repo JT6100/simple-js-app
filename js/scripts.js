@@ -30,12 +30,23 @@ let pokemonlist = [
 
 ];
 
-pokemonlist.forEach(function(name){
-    console.log(name);
+pokemonlist.forEach(function(pokemon) {
+  
+    console.log(pokemon.name +': ' + ' height: ' + pokemon.height);
+
+    if (pokemon.height <5 && pokemon.height > 4.2){
+      
+      document.write(pokemon.name + " (height: " + pokemon.height +")" + " WOW, THAT'S BIG!" + '<br /><br />');
+      
+} else
+
+             document.write(pokemon.name + " (height: " + pokemon.height + ")"+ '<br /><br />');  
+
+                    
 });
 
-    {
-        if (pokemonlist[i].height <5 && pokemonlist[i].height > 4.2){
+    /* {
+      if (pokemonlist[i].height <5 && pokemonlist[i].height > 4.2){
 
         console.log(pokemonlist[i].name + " (hight: " + pokemonlist[i].height +")" + " WOW, THAT'S BIG!");
 
@@ -47,3 +58,4 @@ pokemonlist.forEach(function(name){
             console.log(pokemonlist[i].name + " (hight: " + pokemonlist[i].height +")")
         }
 }
+*/
