@@ -1,34 +1,52 @@
-let pokemonlist = [
+let pokemonRepository = (function () {
+
+    let pokemonlist = [
+        
+        {
+
+            name: 'Charmander',
+
+            type: ['fire'],
+            
+            height: 2.00,
     
-    {
+        },
 
-         name: 'Charmander',
+        {
 
-         type: ['fire'],
-         
-         height: 2.00,
-   
-    },
+            name: 'Krookodile',
 
-    {
+            type: ['ground', 'dark'],
 
-        name: 'Krookodile',
+            height: 4.92,
 
-        type: ['ground', 'dark'],
+        },
 
-        height: 4.92,
+        {
+            name: 'Alcremie',
 
-    },
+            type: ['fairy'],
 
-    {
-        name: 'Alcremie',
+            height: 1,
+        }
 
-        type: ['fairy'],
+    ];
 
-        height: 1,
-    }
+    return {
 
-];
+        add: function(pokemon) {
+            
+            pokemonlist.push(pokemon);
+        },
+
+        getAll: function() {
+
+            return pokemonlist;
+        }
+
+    };
+
+    })();
 
 pokemonlist.forEach(function(pokemon) {
   
