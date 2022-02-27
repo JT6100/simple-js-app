@@ -30,7 +30,9 @@ let pokemonlist = [
 
 ];
 
-for (let i=0; i < pokemonlist.length; i++)
+pokemonlist.forEach(function(name){
+    console.log(name);
+});
 
     {
         if (pokemonlist[i].height <5 && pokemonlist[i].height > 4.2){
