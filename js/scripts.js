@@ -48,7 +48,7 @@ let pokemonRepository = (function () {
 
     })();
 
-pokemonlist.forEach(function(pokemon) {
+pokemonRepository.getAll().forEach(function(pokemon) {
   
     console.log(pokemon.name +': ' + ' height: ' + pokemon.height);
 
