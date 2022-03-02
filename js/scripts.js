@@ -131,3 +131,17 @@ pokemonRepository.getAll().forEach(function (pokemon) {
 
 */
 
+    /* {
+      if (pokemonlist[i].height <5 && pokemonlist[i].height > 4.2){
+
+        console.log(pokemonlist[i].name + " (hight: " + pokemonlist[i].height +")" + " WOW, THAT'S BIG!");
+
+    }
+
+    else
+
+        {
+            console.log(pokemonlist[i].name + " (hight: " + pokemonlist[i].height +")")
+        }
+}
+*/
