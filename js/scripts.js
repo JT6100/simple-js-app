@@ -58,7 +58,7 @@ pokemonRepository.getAll().forEach(function (pokemon) {
 
   let button = document.createElement("button");
 
-  button.innerText = "placeholder";
+  button.innerText = pokemon.name;
 
   button.classList.add("button-class");
 
