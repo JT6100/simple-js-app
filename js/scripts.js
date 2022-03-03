@@ -80,6 +80,12 @@ var pokemonRepository = (function () {
          
        }
 
+       function showDetails(pokemon){
+
+        console.log(pokemon.name);
+        
+       }
+
   return {
     
           add: add,
