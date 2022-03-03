@@ -77,13 +77,15 @@ var pokemonRepository = (function () {
           listpokemon.appendChild(button);
         
           pokemonList.appendChild(listpokemon);
+
+          addListener(button, pokemon);
          
        }
 
        function showDetails(pokemon){
 
         console.log(pokemon.name);
-        
+
        }
 
   return {
