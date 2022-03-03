@@ -62,6 +62,15 @@ var pokemonRepository = (function () {
     
   }
 
+  function addListener(button, pokemon){
+
+    button.addEventListener("click", function() {
+
+        showDetails(pokemon);
+
+    });
+  }
+
        function addListItem(pokemon){
 
           let pokemonList = document.querySelector(".pokemon-list");
@@ -94,9 +103,9 @@ var pokemonRepository = (function () {
     
           getAll: getAll,
 
-          addListItem: addListItem
+          addListItem: addListItem,
 
-          showDetails: showDetails
+          showDetails: showDetails,
   };
 
     })();
