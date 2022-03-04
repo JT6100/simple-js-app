@@ -1,38 +1,28 @@
 let pokemonRepository = (function () {
-
-    let pokemonlist = [];
-
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-
+    let pokemonList = [];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';    
+    
     function add(pokemon) {
         
       if (
-        
+      
         typeof pokemon === "object" &&
-        
-        "name" in pokemon &&
-        
-        "height" in pokemon &&
-        
-        "type" in pokemon
-        
-      ) {
-        
-        pokemonlist.push(pokemon);
-        
-      } else {
-        
-        console.log("pokemon is not correct");
-        
-      }
-          
-    }
+      
+        "name" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      
+      console.log("pokemon is not correct");
+      
+    }    
+  }
   
-    function getAll() {
-      
-      return pokemonlist;
-      
-    }
+  function getAll() {
+    
+    return pokemonList;
+    
+  }
 
        function addListItem(pokemon) {
 
@@ -48,83 +38,59 @@ let pokemonRepository = (function () {
         
           listpokemon.appendChild(button);
         
-          pokemonList.appendChild(listpokemon);
-
-          addListener(button, pokemon);
+          pokemonlist.appendChild(listpokemon);
 
           button.addEventListener("click", function(event) {
-            
             showDetails(pokemon);
-
-          });
-
+        });
+  
        }
 
        function loadList() {
-
-        return fetch(apiUrl).then(function (response) {
-
-          return response.json();
-
-        }).then(function (json) {
-
-          json.results.forEach(function (item) {
-
-            let pokemon = {
-
-              name: item.name,
-
-              detailsUrl: item.url
-
-            };
-
-            add(pokemon);
-
-            console.log(pokemon);
-
-          });
-
-        }).catch(function (e) {
-
+         return fetch(apiUrl).then(function (response) {
+           return response.json();
+         }).then(function (json) {
+            json.results.forEach(function (item) {
+               let pokemon = {
+                 name: item.name,
+                 DetailsUrl: item.url
+               };
+           add(pokemon);
+           console.log(pokemon);
+         });
+         
+       }).catch(function (e) {
           console.error(e);
+        })
+      }
 
-        });
+function loadDetails(item) {
 
-        }
+  let url = item.detailsUrl;
 
-        function loadDetails(item) {
+  return fetch(url).then(function (response) {
 
-          let url = item.detailsUrl;
+    return response.json();
 
-          return fetch(url).then(function (response) {
+  }).then(function (details) {
 
-            return response.json();
+    item.imageUrl = details.sprites.front_default;
+    item.height = details.height;
+    item.types = details.types;
+    
+  }).catch(function (e) {
 
-          }).then(function (details) {
+    console.error(e);
+    
+  });
+  
+}
 
-            item.imageUrl = details.sprites.front_default;
-
-            item.height = details.height;
-
-            item.types = details.types;
-
-          }).catch(function (e) {
-
-            console.error(e);
-
-          });
-
-        }
-
-    function showDetails(item) {
-
-      loadDetails(item).then(function () {
-
-        console.log(pokemon);
-
-      });
-      
-    }
+function showDetails(item) {
+  pokemonRepository.loadDetails(item).then(function () {
+    console.log(item);
+  });
+}
 
   return {
     
@@ -134,22 +100,17 @@ let pokemonRepository = (function () {
 
           addListItem: addListItem,
 
-          showDetails: showDetails,
-
           loadList: loadList,
 
           loadDetails: loadDetails,
+
+          showDetails: showDetails
   };
+})();
 
-    })();
-
-  pokemonRepository.loadList().then(function() {
-
-    pokemonRepository.getAll().forEach(function (pokemon) {
-
-
-      pokemonRepository.addListItem(pokemon);
-
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
   });
 
 });
