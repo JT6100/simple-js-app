@@ -67,7 +67,7 @@ let pokemonRepository = (function () {
 
                  name: item.name,
 
-                 DetailsUrl: item.url
+                 detailsUrl: item.url
 
                };
 
@@ -109,17 +109,17 @@ function loadDetails(item) {
   
 }
 
-function showDetails(item) {
+function showDetails(pokemon) {
 
-  pokemonRepository.loadDetails(item).then(function () {
+  pokemonRepository.loadDetails(pokemon).then(function () {
 
-    console.log(item);
+    console.log(pokemon);
 
   });
 
 }
 
-  return {
+return {
     
           add: add,
     
