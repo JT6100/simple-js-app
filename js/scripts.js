@@ -3,6 +3,8 @@ let pokemonRepository = (function () {
     let pokemonList = [];
 
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';    
+
+    let modalContainer = document.querySelector('#modal-container');
     
     function add(pokemon) {
         
@@ -113,7 +115,7 @@ function showDetails(pokemon) {
 
   pokemonRepository.loadDetails(pokemon).then(function () {
 
-    console.log(pokemon);
+    showModal(pokemon);
 
   });
 
@@ -134,7 +136,7 @@ return {
           showDetails: showDetails
   };
 
-  let modalContainer = document.querySelector('#modal-container');
+
 
   function showModal(title, text) {
       
@@ -153,7 +155,11 @@ return {
     
       let titleElement = document.createElement('h1');
     
-      titleElement.innerText = title;
+      titleElement.innerText = pokemon.name;
+
+      let imageElement = document.createElement('img');
+      
+      imageElement.setAttribute ("src", pokemon.imageUrl);
     
       let contentElement = document.createElement('p');
     
