@@ -121,7 +121,7 @@ function showDetails(pokemon) {
 
 }
 
-function showModal(title, text) {
+function showModal(pokemon, text) {
       
   modalContainer.innerHTML = '';
   
