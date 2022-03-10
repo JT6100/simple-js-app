@@ -147,7 +147,7 @@ function showModal(item) {
   
     let contentElement = document.createElement('p');
   
-    contentElement.innerText = item.height;
+    contentElement.innerText = `Height : ${item.height}`;
   
     modal.appendChild(closeButtonElement);
   
