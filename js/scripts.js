@@ -101,7 +101,7 @@ let pokemonRepository = (function () {
 
           item.height = details.height;
 
-          item.types = details.types;
+          item.weight = details.weight;
           
         }).catch(function (e) {
 
@@ -145,17 +145,23 @@ function showModal(item) {
 
     imageElement.setAttribute ("src", item.imageUrl);
   
-    let contentElement = document.createElement('p');
+    let contentHeight = document.createElement('p');
   
-    contentElement.innerText = `Height : ${item.height}`;
-  
+    contentHeight.innerText = `Height : ${item.height}`;
+
+    let pokemonWeight = document.createElement('p');
+
+    pokemonWeight.innerText = `Weigtht : ${item.weight}`;
+
     modal.appendChild(closeButtonElement);
   
     modal.appendChild(titleElement);
 
     modal.append(imageElement);
   
-    modal.appendChild(contentElement);
+    modal.appendChild(contentHeight);
+
+    modal.append(pokemonWeight);
   
     modalContainer.appendChild(modal);
   
