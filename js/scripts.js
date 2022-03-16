@@ -122,6 +122,12 @@ function showDetails(pokemon) {
 }
 
 function showModal(item) {
+
+  let modalBody = $(".modal-body");
+
+  let modalTitle = $(".modal-title");
+
+  let modalHeader= $(".modalheader");
       
   modalContainer.innerHTML = '';
   
