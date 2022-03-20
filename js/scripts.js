@@ -7,6 +7,7 @@ let pokemonRepository = (function () {
     function add(pokemon) {
 
       pokemonList.push(pokemon);
+    }
   
   function getAll() {
     
@@ -14,7 +15,7 @@ let pokemonRepository = (function () {
     
   }
 
-       function addListItem (pokemon) {
+       function addListItem(pokemon){
 
           let pokemonList = document.querySelector('.list-group');
 
@@ -85,8 +86,6 @@ let pokemonRepository = (function () {
           item.height = details.height;
 
           item.weight = details.weight;
-
-          item.types = details.types
           
         }).catch(function (e) {
 
@@ -126,11 +125,6 @@ function showDetails(item) {
   
     let pokemonWeight = $("<p>" + "weight : " + item.weight + "</p>");
   
-    let pokemontype = $("<p>" + "type/types : " + item.types + "</p>");
-
-
-  
-      
       modalTitle.append(nameElement);
   
       modalBody.append(imageElementFront);
@@ -171,4 +165,3 @@ pokemonRepository.loadList().then(function () {
   });
 
 });
-
