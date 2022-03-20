@@ -32,12 +32,47 @@
 
 </nav>
 
+  <main>
 
-        <ul class='list-group flex-row flex-wrap w-100 just-content: center list-unstyled pokemon-list'></ul>
+      <div class="container">
 
-        <div id='modal-container'></div>
+        <div class="row">
 
-</div>
+          <div class="col">
+
+            <ul class="list-group list-unstyled flex-row flex-wrap w-100 just-content: center" data-toggle="modal" data-target="#Pokemon"></ul>
+
+            <div class="modal fade" id="Pokemon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+              <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                  <div class="modal-header">
+
+                    <h5 class="col-12 modal-title text-center text-capitalize" id="exampleModalLabel"></h5>
+
+                  </div>
+
+                        <div class="modal-body fixed text-capitalize"></div>
+
+                  <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     <script src="js/promise-polyfill.js"></script>
 
