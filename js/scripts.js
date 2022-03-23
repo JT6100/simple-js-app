@@ -132,8 +132,6 @@ function showDetails(item) {
       modalBody.append(pokemonHeight);
   
       modalBody.append(pokemonWeight);
-  
-      modalBody.append(pokemontype); 
   }
   
 
